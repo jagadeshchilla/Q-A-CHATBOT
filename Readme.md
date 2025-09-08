@@ -23,11 +23,11 @@ A lightweight Streamlit app that answers user questions using either OpenAI mode
 ```mermaid
 flowchart LR
   subgraph UI[Streamlit UI]
-    A[Text Input\nQuestion]
-    B[Sidebar\nModel + Params]
+    A[Text Input and Question]
+    B[Sidebar with Model and Params]
   end
 
-  A --> C[LangChain Prompt\n(system + human)]
+  A --> C[LangChain Prompt]
   B --> C
 
   C -->|OpenAI| D[ChatOpenAI]
@@ -36,12 +36,7 @@ flowchart LR
   D --> F[StrOutputParser]
   E --> F
 
-  F --> G[Answer Rendered\nin Streamlit]
-
-  classDef ui fill:#f0f7ff,stroke:#4a90e2,stroke-width:1.5px;
-  classDef svc fill:#fffaf0,stroke:#f5a623,stroke-width:1.5px;
-  class UI ui;
-  class D,E,C,F svc;
+  F --> G[Answer Rendered in Streamlit]
 ```
 
 ### Request flow
